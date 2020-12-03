@@ -1,15 +1,15 @@
 # AoC-2020
-Python solutions to Advent of Code 2020 problems.
+Python solutions to Advent of Code 2020 puzzles.
 
 ---
 
-## Problem Prompts
-Problems can be found on the AoC [website](https://adventofcode.com/2020). Each day's problem can also be found in the `prompts` folder.
+## Puzzle Prompts
+Puzzles can be found on the AoC [website](https://adventofcode.com/2020). Each day's puzzle can also be found in the `prompts` folder.
 
 ---
 
-## Problem Comments 
-Each problem I compete has:
+## Puzzle Comments 
+Each puzzle I compete has:
 1) A subjective 1-10 rating of how hard I thought it was
 2) A few comments on how I approached it
 
@@ -29,8 +29,10 @@ Basic string manipulation. Interesting that I was off by one for a while because
 ---
 
 
-### Day 3 - ?/10
-
+### Day 3 - 1/10
+Very straightforward use of modulo operator. Was a fun puzzle though. Second part was a good excersize in generalization.
+* Python's list comprehensions made it easy to get the indices of each tree from the input lines.
+* Using `reduce` from the `functool` library with a lambda function was very clean. Will probably try to use these more in future puzzles.
 ---
 
 ### Day 4 - ?/10
