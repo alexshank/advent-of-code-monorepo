@@ -28,11 +28,22 @@ Basic string manipulation. Interesting that I was off by one for a while because
 
 ---
 
-
 ### Day 3 - 1/10
 Very straightforward use of modulo operator. Was a fun puzzle though. Second part was a good excersize in generalization.
 * Python's list comprehensions made it easy to get the indices of each tree from the input lines.
 * Using `reduce` from the `functool` library with a lambda function was very clean. Will probably try to use these more in future puzzles.
+
 ---
 
-### Day 4 - ?/10
+### Day 4 - 5/10
+A lot of work going through the input data and preparing it. I had more issues with off by one errors caused by the end of the input file. ***This time I cheated by adding TWO newlines to the end of the input file.***
+
+I did not like the second part. It was a lot of redundent data validation work that wasn't really puzzle-like.
+* List comprehensions useful again.
+* First time I've used `list.extend()` rather than `list.append()`.
+* During part 2, found a way to simplify field validation assuming no more than 8 fields ever present.
+* First challenge where I needed test inputs and a debugger to fix my logic
+
+---
+
+### Day 5 - ?/10
