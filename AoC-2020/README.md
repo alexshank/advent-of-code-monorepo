@@ -46,4 +46,6 @@ I did not like the second part. It was a lot of redundent data validation work t
 
 ---
 
-### Day 5 - ?/10
+### Day 5 - 2/10
+An interesting take on binary search. Very straight forward puzzle. Off-by-one errors have been killing me!
+
