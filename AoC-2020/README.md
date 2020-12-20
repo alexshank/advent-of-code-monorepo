@@ -46,6 +46,21 @@ I did not like the second part. It was a lot of redundent data validation work t
 
 ---
 
-### Day 5 - 2/10
+### Day 5 - 3/10
 An interesting take on binary search. Very straight forward puzzle. Off-by-one errors have been killing me!
+
+---
+
+### Day 6 - 2/10
+First use of a `set` in any of these puzzles. I expected the second part to require you to analyze each person, so the first part isn't as optimized as it could be. (But premature optimization is death anyways!)
+
+---
+
+### Day 7 - 9/10
+First puzzle that has been very difficult for me. Since I'm not great with trees, there was probably a more Pythonic/simpler way I could have solved Part I. My solution feels clumsy, and I doubt I was meant to implement tree search myself. Still, nice to have an excuse to write recursive functions and work with trees. Part II also threw me for a loop, because I ignored Bag counts for Part I, and the data doesn't exactly match a Tree datatype (there are duplicate branches that are children of multiple different parent branches)
+* First absolutely neccessary use of a `Class` so far
+* Recursive functions for searching for and counting items with my `Bag` tree
+* I am currious how non-optimal my solution is. The complexity of the logic makes it hard to follow others' solutions and see how mine could be improved
+
+
 
