@@ -77,8 +77,14 @@ I was completely convinced this would be one of those problems that looks straig
 
 ---
 
-### Day 10 - ?/10
+### Day 10 - 5/10
+Part I was very easy. Part II I couldn't solve myself, so I looked at [this](https://github.com/viliampucik/adventofcode/tree/master/2020) solution. I'm actually happy I had to check others' solutions, because they were much cleaner than what I would have hacked together.
+* `defaultdict` can be very useful and I haven't really used them yet
+* I really thought this would be a recursive problem, so I never saw the real way it should be approached
 
+---
+
+### Day 11 - ?/10
 
 
 
