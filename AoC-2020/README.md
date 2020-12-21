@@ -62,5 +62,23 @@ First puzzle that has been very difficult for me. Since I'm not great with trees
 * Recursive functions for searching for and counting items with my `Bag` tree
 * I am currious how non-optimal my solution is. The complexity of the logic makes it hard to follow others' solutions and see how mine could be improved
 
+---
+
+### Day 8 - 2/10
+I have taken higher level computer architecture courses for my B.S. ECE, so I am very familiar with this puzzle's concept. Basically involved parsing the input data and manipulating a program counter.
+* I think the OOP approach I took is very clean and simulates the gaming device nicely
+* I used Python's `type hints` to specify that an `-> int` has to be returned by every executed instruction. I think this is only valuable if I run static code analysis on these puzzles though
+* Made a very beginner pointer mistake while trying to make my code more readable with local variables. You can read `self.instructions[i]` into a local variable `instr`, but writing to `instr` will not change `self.instructions[i]`. This is because `self.instructions[i]` returns an immutable `string`. So, when `instr` is assigned a value, it is actually pointed to an entirely new address in memory with new immutable string data
+
+---
+
+### Day 9 - 1/10
+I was completely convinced this would be one of those problems that looks straightforward, but takes much too long to compute. Turns out, it was just very straightforward!
+
+---
+
+### Day 10 - ?/10
+
+
 
 
