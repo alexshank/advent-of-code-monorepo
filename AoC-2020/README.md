@@ -80,11 +80,18 @@ I was completely convinced this would be one of those problems that looks straig
 ### Day 10 - 5/10
 Part I was very easy. Part II I couldn't solve myself, so I looked at [this](https://github.com/viliampucik/adventofcode/tree/master/2020) solution. I'm actually happy I had to check others' solutions, because they were much cleaner than what I would have hacked together.
 * `defaultdict` can be very useful and I haven't really used them yet
+* The `map` function is also a much cleaner way of modifying lists
 * I really thought this would be a recursive problem, so I never saw the real way it should be approached
 
 ---
 
-### Day 11 - ?/10
+### Day 11 - 4/10
+This has been my favorite puzzle so far. The first part shows how effective some simple optimizations can be. I went from a program that did not terminate in under a few minutes, to one that completes in about 5 seconds for Part II. Some optimizations to note:
+1. I hardcoded the offset values needed for corner, side, and surrounded seats. This removed a lot of computations that were needed in my first, generalized solution
+2. Any conditional I already knew the result of didn't get evaluated. For example, Part II originally checked if the offsets went out of bounds with a `while` loop. However, the first iteration is always `True`, so I moved the conditional check into the loop essentially creating a `do while`.
+3. I am still trying to write "Pythonic" code, but I am unsure of the effects that list comprehensions, generators, and lambda functions have on execution times.
+
+***I am realizing I won't finish this AoC by the 25th because I spend too much time optimizing, looking at others' solutions, and redoing things after I solve the puzzles.***
 
 
 
