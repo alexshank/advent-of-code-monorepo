@@ -91,7 +91,29 @@ This has been my favorite puzzle so far. The first part shows how effective some
 2. Any conditional I already knew the result of didn't get evaluated. For example, Part II originally checked if the offsets went out of bounds with a `while` loop. However, the first iteration is always `True`, so I moved the conditional check into the loop essentially creating a `do while`.
 3. I am still trying to write "Pythonic" code, but I am unsure of the effects that list comprehensions, generators, and lambda functions have on execution times.
 
-***I am realizing I won't finish this AoC by the 25th because I spend too much time optimizing, looking at others' solutions, and redoing things after I solve the puzzles.***
+***I am realizing I won't finish this AoC by the 25th because I spent too much time optimizing, looking at others' solutions, and redoing things after I solve the puzzles.***
 
+I was especially impressed by [this](https://github.com/metinsuloglu/AdventofCode20/blob/main/day11.py) solution, which uses vectorization (`numpy`) and 2D convolution (`scipy`) in a very clever way to determine the number of occupied seats around each seat. This is ***an entire*** solution to Part I.
 
+```python
+grid_converter = str.maketrans('.L#','012')
+with open('inputs/day11.txt') as layout:
+    grid = np.array([[int(x) for x in list(r.translate(grid_converter))]
+                     for r in layout.read().splitlines()])
+
+# Part 1
+kernel = np.array([[1,1,1],[1,0,1],[1,1,1]])
+curr_seats = np.copy(grid)
+while True:
+    prev_seats = np.copy(curr_seats)
+    res = convolve(np.where(curr_seats == 2, 1, 0), kernel, mode='constant')
+    curr_seats[(curr_seats == 1) & (res == 0)] = 2
+    curr_seats[(curr_seats == 2) & (res >= 4)] = 1
+    if (prev_seats == curr_seats).all(): break
+                
+part1 = np.count_nonzero(curr_seats == 2)
+```
+---
+
+### Day 12 - ?/10
 
