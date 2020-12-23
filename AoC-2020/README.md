@@ -115,5 +115,13 @@ part1 = np.count_nonzero(curr_seats == 2)
 ```
 ---
 
-### Day 12 - ?/10
+### Day 12 - 2/10
+Part I was a very straighforward puzzle. Part II could be done a couple different ways.
+* Using the `%` operator made implementing left and right turns very clean.
+* Solution for Part II was also pretty straightforward, but I spent a lot of time trying to optimize calculating rotated points
+    * I ended up using a wikipedia article on the [rotation matrix](https://en.wikipedia.org/wiki/Rotation_matrix)
+
+---
+
+### Day 13 - ?/10
 
