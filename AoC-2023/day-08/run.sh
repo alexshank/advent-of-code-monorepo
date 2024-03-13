@@ -1,1 +1,1 @@
-ghc -o solve solve.hs && ./solve
+ghc -o solve solve.hs && echo "Running..." && ./solve

@@ -13,21 +13,41 @@ main = do
     rights = mapSubstrings 12 15 mappings
 
     nodes = Map.fromList $ zip keys $ zip lefts rights
-    answer = countUntil nodes (cycle instructions) (Just "AAA")
+    answerOne = partOne nodes (cycle instructions) (Just "AAA")
 
-  print answer
+    startingKeys = filter ((=='A') . last) keys
+    answerTwo = mapUntil (all (((=='Z') . last))) (partTwo nodes) (cycle instructions) startingKeys
+  
+  putStrLn $ "Part 1: " ++ show answerOne
+  putStrLn $ "Part 2: " ++ show answerTwo
 
 mapSubstrings :: Int -> Int -> ([String] -> [String])
 mapSubstrings start end = map $ (drop start) . (take end)
 
-countUntil :: Map.Map String (String, String) -> String -> Maybe String -> Int
-countUntil _ _ (Just "ZZZ") = 0
-countUntil nodes (direction:directions) (Just currentKey) =
-  1 + (countUntil nodes directions (fmap op $ Map.lookup currentKey nodes))
+partOne :: Map.Map String (String, String) -> String -> Maybe String -> Int
+partOne _ _ (Just "ZZZ") = 0
+partOne nodes (direction:directions) (Just currentKey) =
+  1 + (partOne nodes directions (fmap op $ Map.lookup currentKey nodes))
   where
     op =
       case direction of
         'L' -> fst
         _ -> snd
-countUntil _ _ _ = -1
+partOne _ _ _ = 0
+
+partTwo :: Map.Map String (String, String) -> Char -> String -> String
+partTwo nodes direction currentKey =
+  op $ Map.findWithDefault ("000", "000") currentKey nodes
+  where
+    op =
+      case direction of
+        'L' -> fst
+        _ -> snd
+
+mapUntil :: ([String] -> Bool) -> (Char -> String -> String) -> String -> [String] -> Int
+mapUntil _ _ [] _ = 0
+mapUntil condition func (x:xs) state
+  | condition state = 0
+  | otherwise = 1 + (mapUntil condition func xs (map (func x) state))
+
 
