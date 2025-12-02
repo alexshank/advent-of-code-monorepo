@@ -1,6 +1,11 @@
+"""
+Solutions to Advent of Code 2025 - Day 1
+"""
+
+
 def solution_01():
     lines = None
-    with open("input.txt", "r") as input_file:
+    with open("./day-01/input.txt", "r") as input_file:
         lines = input_file.readlines()
     lines = [l.strip("\n") for l in lines if l.strip("\n")]
 
@@ -14,19 +19,18 @@ def solution_01():
 
 
 """
-Was stumped by part 2. Had to find a solution on Reddit.
+Was stumped by part 2. Had to find a solution on Reddit. I understood it enough to tweak it to my style.
 """
 
 
 def solution_02():
     lines = None
-    with open("input.txt", "r") as input_file:
+    with open("./day-01/input.txt", "r") as input_file:
         lines = input_file.readlines()
     lines = [l.strip("\n") for l in lines if l.strip("\n")]
 
     rotations = 0
     dir = "R"
-    # at start of each loop, cur_pos could be much larger than 100
     cur_pos = 50
     for line in lines:
         new_dir = line[0] == "L"
@@ -34,19 +38,20 @@ def solution_02():
 
         # flip clock entirely, so everything is a right turn without edge cases
         if dir != new_dir:
-            cur_pos = (
-                100 - cur_pos
-            )  # e.g., 100 - 813 = 713. Then, 713 % 100 = 13 is new position
+            # need the modulo here in case cur_pos is 0 and leads to 100 - 0 = 100
+            cur_pos = (100 - cur_pos) % 100
             dir = new_dir
 
-        # note that cur_pos here can be > 100, since num can be any positive int
-        cur_pos = (cur_pos % 100) + num
-        rotations += cur_pos // 100
+        new_pos = cur_pos + num
+        rotations += new_pos // 100
+        cur_pos = new_pos % 100
 
     return rotations
 
 
 if __name__ == "__main__":
-    print(f"{solution_01()=}")
-    print("-----")
-    print(f"{solution_02()=}")
+    print()
+    print("-------- Day 1 --------")
+    print(f"Part 1: {solution_01()}")
+    print(f"Part 2: {solution_02()}")
+    print()
