@@ -7,6 +7,7 @@ from four separate repositories into a single place while preserving the full gi
 
 ```
 advent-of-code-monorepo/
+├── AoC-2019/    # C++ solutions (partial, days 1–6)
 ├── AoC-2020/    # Python solutions
 ├── AoC-2022/    # Mostly Python, some Haskell and Kotlin
 ├── AoC-2023/    # JavaScript and Haskell solutions
@@ -14,6 +15,10 @@ advent-of-code-monorepo/
 ```
 
 ## Years
+
+### [AoC-2019](./AoC-2019/README.md)
+C++ solutions for days 1–6, written while learning the language. Migrated from a separate
+`misc-languages` repo.
 
 ### [AoC-2020](./AoC-2020/README.md)
 Python solutions with puzzle prompts archived in the `prompts/` folder. Each completed puzzle
