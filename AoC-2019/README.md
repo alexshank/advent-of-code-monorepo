@@ -1,7 +1,6 @@
 # AoC-2019
 
-C++ solutions to Advent of Code 2019 (partial run, days 1–6). Originally written to get
-familiar with C++ syntax and the STL; migrated here from `misc-languages/misc-cpp/`.
+Solutions to Advent of Code 2019 (only days 1–6). Written in C++ to get familiar with the language's syntax and standard library. Migrated here from `misc-languages/misc-cpp/`.
 
 ## Layout
 
@@ -11,22 +10,19 @@ AoC-2019/
 └── solution-template/  # starter scaffolding used when beginning a new day
 ```
 
-Each `README.md` inside a `day-XX/` folder contains the puzzle prompt for both parts
-and the recorded answers.
+Each `README.md` inside a `day-XX/` folder contains the puzzle prompt for both parts and the recorded answers.
 
 ## Build / run
 
-The originals were built with MSVC (Developer Command Prompt for VS 2017). Any modern
-C++ compiler works — for example, from a day's directory:
+The originals were built with MSVC (Developer Command Prompt for VS 2017). Any modern C++ compiler works. For example, from any day's directory:
 
 ```shell
 g++ -std=c++17 solution.cpp -o solution && ./solution
 ```
 
-The solution reads `input.txt` from the current working directory, so run it from inside
-the day's folder.
+Each solution reads `input.txt` from the current working directory, so run commands from inside the day's folder.
 
-## Comments on each day's challenge(s)
+## Journal
 
 1. Getting used to C++ syntax. Nice to see a good use case for recursion (seems rare in practice).
 2. I recently simulated a RISC computer in Register Transfer Notation for my Computer Architecture course at Ohio State. This problem is very similiar, so using good C++ practices was my mine focus.
