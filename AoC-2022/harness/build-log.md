@@ -65,30 +65,33 @@ In practice that shapes the tooling in three places. The formatter target is sco
 
 ## Measured results
 
-All 26 cases pass. The saved baseline is `harness/results/20260906T160051Z-363ec458-dirty.json`: the whole year runs in **320.86s** and reads **277.8 KB** of input, and two days are 90% of the runtime.
+All 26 cases pass. The current baseline is `harness/results/20260906T182049Z-4fd8f5a0-dirty.json`, taken with averaging on: the suite takes **467.49s** and reads **277.8 KB** of input. Wall figures below are means, and the repeat count is in the last column.
 
-| Case | Wall | Peak RSS | Input |
-| --- | --- | --- | --- |
-| day-16-py | 145.57s | 3138.3 MB | 3.4 KB |
-| day-19-py | 142.36s | 2125.2 MB | 4.7 KB |
-| day-15-py | 21.35s | 14.8 MB | 1.9 KB |
-| day-23-py | 3.10s | 21.4 MB | 5.0 KB |
-| day-24-py | 2.24s | 309.8 MB | 3.2 KB |
-| day-13-py | 2.04s | 14.8 MB | 20.6 KB |
-| day-17-py | 1.70s | 127.0 MB | 9.9 KB |
-| day-12-kt | 0.33s | 349.2 MB | 5.5 KB |
-| everything else | under 0.6s each | ~15 MB | 0.9-33.7 KB |
+| Case | Wall | Peak RSS | Input | Runs |
+| --- | --- | --- | --- | --- |
+| day-19-py | 144.26s | 2125.4 MB | 4.7 KB | 1 |
+| day-16-py | 143.54s | 3084.6 MB | 3.4 KB | 1 |
+| day-15-py | 21.32s +-0.17 | 15.8 MB | 1.9 KB | 3 |
+| day-23-py | 3.15s +-0.10 | 22.5 MB | 5.0 KB | 10 |
+| day-24-py | 2.28s +-0.01 | 310.2 MB | 3.2 KB | 10 |
+| day-13-py | 2.06s +-0.05 | 15.8 MB | 20.6 KB | 10 |
+| day-17-py | 1.67s +-0.02 | 127.3 MB | 9.9 KB | 10 |
+| day-12-kt | 0.32s +-0.01 | 349.2 MB | 5.5 KB | 10 |
+| everything else | under 0.7s each | ~16 MB | 0.9-33.7 KB | 10 |
 
 Things worth noticing:
 
 - Days 16 and 19 are the two that were remembered as painful, and the measurement agrees. Day 16 peaks above 3 GB on 3.4 KB of input — the memoization that made part 2 finish in minutes instead of never is paid for entirely in memory.
-- Input size predicts nothing. The largest input in the year is day 21 at 33.7 KB, which runs in a quarter of a second. The two slowest days read 3.4 KB and 4.7 KB. Runtime here is a property of the search space, not the file.
-- Day 16's peak RSS is not stable between runs: 3.1 GB, then 4.2 GB, then 3.1 GB again, with identical code. Peak memory of a large growing dictionary depends on when it happens to resize and when the allocator returns pages. Treat it as a rough figure, and do not read a 20% change in it as a result.
-- Day 24 uses 310 MB for a 2.2s run, out of proportion to every other Python day, and worth a look someday.
-- The Kotlin day costs 349 MB and 0.33s, essentially all JVM startup. The Haskell day costs 157 MB under `runghc`, which is the interpreter rather than the program.
+- Input size predicts nothing. The largest input in the year is day 21 at 33.7 KB, which runs in a fifth of a second. The two slowest days read 3.4 KB and 4.7 KB. Runtime here is a property of the search space, not the file.
+- Wall time is far more repeatable than expected. Across 10 runs the standard deviation is at or under 0.01s for most days, and the worst absolute case is day 15 at +-0.17s on 21.32s, under 1%. In relative terms the noisiest case is day 21 at +-0.05s on 0.20s, and that one is dominated by `uv` resolving sympy rather than by the solution.
+- Peak RSS is the unstable measurement, not time. Day 16 has now been recorded at 3.1 GB, 4.2 GB, and 3.1 GB with identical code. Peak memory of a large growing dictionary depends on when it happens to resize and when the allocator returns pages. Treat it as a rough figure and do not read a 20% change in it as a result.
+- Day 24 uses 310 MB for a 2.3s run, out of proportion to every other Python day, and worth a look someday.
+- The Kotlin day costs 349 MB and 0.32s, essentially all JVM startup. The Haskell day costs 157 MB under `runghc`, which is the interpreter rather than the program.
 - Wall time and CPU time match almost exactly everywhere. Nothing in this year is I/O bound; it is all compute.
 
-Two suite runs briefly overlapped during development, which made the day 15/16/19 numbers from that run meaningless. The baseline above is from a single run with nothing else competing for the machine. Worth remembering that a profiling harness measures the machine as much as the code.
+The pre-averaging baseline is kept too, in `20260906T160051Z-363ec458-dirty.json`, as a single run of every case. Comparing the two is a decent illustration of how little a single run costs you on time and how much it costs you on memory.
+
+Two suite runs briefly overlapped during development, which made the day 15/16/19 numbers from that run meaningless. Both baselines above come from runs with nothing else competing for the machine. Worth remembering that a profiling harness measures the machine as much as the code.
 
 ## Turning a gate into an instrument
 
@@ -100,6 +103,14 @@ Recording the dirty flag matters more than it looks. Most of these measurements 
 
 Input file size was added at the same time, one field per case, straight from `stat`. It is the cheapest possible measure of problem size, and it is what makes a memory number interpretable: day 16 reading 3.4 KB of input and peaking at 4 GB is a fact about the algorithm, not about the puzzle.
 
+## Averaging, and what it costs
+
+Once the harness became an instrument, single-run numbers stopped being good enough: the plan is to attribute differences to code changes, and one run of a Python program carries several percent of noise from interpreter startup, page cache state, and CPU frequency alone. So every case now runs 10 times and reports the mean, with the standard deviation alongside it and every individual sample kept in the saved record.
+
+The request came with a condition — "if that isn't prohibitively expensive" — and for two days it is. At 10 repeats, day 16 and day 19 would take about 24 minutes each, turning a 5 minute suite into a 54 minute one. Rather than dropping averaging or accepting an hour-long suite, the repeat count became a per-case manifest value: 10 by default, 3 for day 15, and 1 for days 16 and 19. That puts the full suite at roughly 8 minutes.
+
+The important part is that `repeats` is recorded per case in the results. A capped day still reports a mean and a standard deviation, and if you cannot see that it is the mean of one, you will eventually read a 3% difference on day 16 as an improvement. The cheap fix for a measurement you cannot afford to take properly is to make the record say so.
+
 ## Prompting approaches used
 
 - **State the outcome, not the implementation.** "Run all days and assert their two answers, and profile time and memory" left the agent free to discover that a manifest plus a subprocess runner beat a pytest harness for a multi-language year.
@@ -107,3 +118,4 @@ Input file size was added at the same time, one field per case, straight from `s
 - **Let reconnaissance precede design.** The most useful thing the agent did was run all 25 days before writing any harness code. Every real design decision came out of that output.
 - **Make the agent surface decisions instead of guessing.** The three questions each had a materially different amount of churn behind them, from zero to a rewrite of every solution file.
 - **Prefer the least invasive option when in doubt.** The harness is entirely additive: it does not modify a single 2022 solution.
+- **Attach the cost condition to the request.** "Average 10 runs, if that isn't prohibitively expensive" is a better instruction than either "average 10 runs" or "make it accurate but fast", because it names the tradeoff and delegates where to draw the line. The answer was a per-case cap rather than a global compromise.

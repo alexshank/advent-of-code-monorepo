@@ -12,13 +12,14 @@ python3 harness/run.py --list        # list case ids
 python3 harness/run.py day-16-py     # run one or more cases
 python3 harness/run.py --json        # machine-readable results
 python3 harness/run.py --save        # save this run to harness/results/
+python3 harness/run.py --repeats 1   # one timing run per case instead of ten
 ```
 
 Exit status is non-zero if any case fails, so `make test` works as a CI gate.
 
 ## How it works
 
-`manifest.toml` holds one case per runnable solution: an id, the command to run it, a timeout, and the answer strings its output must contain. `run.py` runs each command with `AoC-2022/` as the working directory (the solutions read their inputs from relative paths), captures combined stdout and stderr, and checks that the expected answers appear **in order**.
+`manifest.toml` holds one case per runnable solution: an id, the command to run it, its input file, a timeout, the answer strings its output must contain, and optionally how many times to repeat it. `run.py` runs each command with `AoC-2022/` as the working directory (the solutions read their inputs from relative paths), captures combined stdout and stderr, and checks that the expected answers appear **in order**.
 
 Matching is by substring rather than exact output for a reason: these solutions were written across a month in 2022 with no shared output convention. Some print bare numbers, some print `Part 1: <n>`, and several print grids, progress counters, or debug dumps around the answer. Substring matching lets the harness assert the answers without rewriting 25 days of solutions.
 
@@ -28,6 +29,12 @@ Per-case profiling comes from `os.wait4`, which returns the child's own `rusage`
 - CPU seconds (user + system)
 - peak resident set size in MB (`ru_maxrss`)
 - the size of the input file that case reads
+
+Every case runs **10 times** by default and the reported figures are means, with the standard deviation of wall time shown next to it and every individual run kept in the saved record. One run of a Python program is mostly noise — interpreter startup, page cache state, CPU frequency — and a single number invites reading that noise as a result.
+
+Three days override this in the manifest, because 10 runs of them is not worth the wall time: day 15 runs 3 times, and days 16 and 19 run once each. At 10 repeats those two alone would take about 48 minutes. Their `repeats` value is recorded in the results, so a single-run figure is never mistaken for an averaged one. Use `--repeats N` to override every case at once, e.g. `--repeats 1` for a quick correctness check.
+
+Answers are asserted on every repeat, and the case stops early on the first failure.
 
 The suite also reports total wall time, the slowest case, and the heaviest case.
 
