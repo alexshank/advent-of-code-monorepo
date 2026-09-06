@@ -1,0 +1,12 @@
+# These solutions were written in 2022 with tabs and are kept as they were, so
+# the formatter matches that rather than reformatting 25 days of history.
+line-length = 120
+indent-width = 4
+
+[format]
+indent-style = "tab"
+
+[lint]
+# Correctness rules only. Style rules would flag most of these solutions for
+# choices made deliberately at the time.
+select = ["E9", "F"]

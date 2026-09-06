@@ -1,0 +1,210 @@
+# One case per runnable solution. `answers` are the strings that must appear in
+# the run's combined stdout/stderr, in the listed order — substring matching is
+# used on purpose, because these solutions were never written to a common output
+# format and several of them wrap answers in prose or bury them in debug output.
+#
+# `note` records where a case does not print both parts. The 2022 solutions were
+# often edited in place to go from part 1 to part 2, so for some days the part 1
+# code no longer exists to run.
+
+[[case]]
+id = "day-01-py"
+cmd = ["python3", "day-1.py"]
+input = "inputs/day-1-input.txt"
+timeout = 60
+answers = ["204610"]
+note = "part 2 only; the part 1 max is never printed"
+
+[[case]]
+id = "day-01-hs"
+cmd = ["runghc", "day-1.hs"]
+input = "inputs/day-1-input.txt"
+timeout = 120
+answers = ["70374", "204610"]
+
+[[case]]
+id = "day-02-py"
+cmd = ["python3", "day-2.py"]
+input = "inputs/day-2-input.txt"
+timeout = 60
+answers = ["9177", "12111"]
+
+[[case]]
+id = "day-03-py"
+cmd = ["python3", "day-3.py"]
+input = "inputs/day-3-input.txt"
+timeout = 60
+answers = ["8053", "2425"]
+
+[[case]]
+id = "day-04-py"
+cmd = ["python3", "day-4.py"]
+input = "inputs/day-4-input.txt"
+timeout = 60
+answers = ["509", "870"]
+
+[[case]]
+id = "day-05-py"
+cmd = ["python3", "day-5.py"]
+input = "inputs/day-5-input.txt"
+timeout = 60
+answers = ["TGWSMRBPN", "TZLTLWRNF"]
+
+[[case]]
+id = "day-06-py"
+cmd = ["python3", "day-6.py"]
+input = "inputs/day-6-input.txt"
+timeout = 60
+answers = ["1262", "3444"]
+
+[[case]]
+id = "day-07-py"
+cmd = ["python3", "day-7.py"]
+input = "inputs/day-7-input.txt"
+timeout = 60
+answers = ["1490523", "12390492"]
+
+[[case]]
+id = "day-08-py"
+cmd = ["python3", "day-8.py"]
+input = "inputs/day-8-input.txt"
+timeout = 60
+answers = ["1782", "474606"]
+
+[[case]]
+id = "day-09-py"
+cmd = ["python3", "day-9.py"]
+input = "inputs/day-9-input.txt"
+timeout = 60
+answers = ["6087", "2493"]
+
+[[case]]
+id = "day-10-py"
+cmd = ["python3", "day-10.py"]
+input = "inputs/day-10-input.txt"
+timeout = 60
+answers = [
+	"12520",
+	"""
+####.#..#.###..####.###....##..##..#....
+#....#..#.#..#....#.#..#....#.#..#.#....
+###..####.#..#...#..#..#....#.#....#....
+#....#..#.###...#...###.....#.#.##.#....
+#....#..#.#....#....#....#..#.#..#.#....
+####.#..#.#....####.#.....##...###.####.""",
+]
+note = "part 2 is rendered pixels (EHPZPZHL), so the raster itself is the expected answer"
+
+[[case]]
+id = "day-11-py"
+cmd = ["python3", "day-11.py"]
+input = "inputs/day-11-input.txt"
+timeout = 120
+answers = ["19457438264"]
+note = "part 2 only; the part 1 worry-divided-by-3 code was removed"
+
+[[case]]
+id = "day-12-kt"
+cmd = ["java", "-jar", "day-12.jar"]
+input = "inputs/day-12-input.txt"
+timeout = 300
+answers = ["456", "454"]
+note = "runs the committed jar; rebuild with ./day-12.sh needs kotlinc"
+
+[[case]]
+id = "day-13-py"
+cmd = ["python3", "day-13.py"]
+input = "inputs/day-13-input.txt"
+timeout = 60
+answers = ["5717", "25935"]
+
+[[case]]
+id = "day-14-py"
+cmd = ["python3", "day-14.py"]
+input = "inputs/day-14-input.txt"
+timeout = 60
+answers = ["24589"]
+note = "part 2 only; part 1 (901) was overwritten"
+
+[[case]]
+id = "day-15-py"
+cmd = ["python3", "day-15.py"]
+input = "inputs/day-15-input.txt"
+timeout = 120
+answers = ["5112034", "13172087230812"]
+
+[[case]]
+id = "day-16-py"
+cmd = ["python3", "day-16.py"]
+input = "inputs/day-16-input.txt"
+timeout = 600
+answers = ["Answer 1: 1915", "Answer 2: 2772"]
+
+[[case]]
+id = "day-17-py"
+cmd = ["python3", "day-17.py"]
+input = "inputs/day-17-input.txt"
+timeout = 60
+answers = ["1542941176480"]
+note = "part 2 only; part 1 (3127) was overwritten"
+
+[[case]]
+id = "day-18-py"
+cmd = ["python3", "day-18.py"]
+input = "inputs/day-18-input.txt"
+timeout = 60
+answers = ["4364", "2508"]
+
+[[case]]
+id = "day-19-py"
+cmd = ["python3", "day-19.py"]
+input = "inputs/day-19-input.txt"
+timeout = 600
+answers = ["21546"]
+note = "part 2 only; part 1 (1127) was overwritten"
+
+[[case]]
+id = "day-20-py"
+cmd = ["python3", "day-20.py"]
+input = "inputs/day-20-input.txt"
+timeout = 60
+answers = ["Part 1: 14526", "Part 2: 9738258246847"]
+
+[[case]]
+id = "day-21-py"
+cmd = ["uv", "run", "--with", "sympy", "python3", "day-21.py"]
+input = "inputs/day-21-input.txt"
+timeout = 180
+answers = ["21208142603224", "3882224466191"]
+note = "only day with a third-party dependency; uv fetches sympy on first run"
+
+[[case]]
+id = "day-22-py"
+cmd = ["python3", "day-22.py"]
+input = "inputs/day-22-input.txt"
+timeout = 60
+answers = ["95316"]
+note = "part 2 only; part 1 (165094) was overwritten"
+
+[[case]]
+id = "day-23-py"
+cmd = ["python3", "day-23.py"]
+input = "inputs/day-23-input.txt"
+timeout = 60
+answers = ["925"]
+note = "part 2 only; part 1 (3871) was overwritten"
+
+[[case]]
+id = "day-24-py"
+cmd = ["python3", "day-24.py"]
+input = "inputs/day-24-input.txt"
+timeout = 60
+answers = ["308", "908"]
+
+[[case]]
+id = "day-25-py"
+cmd = ["python3", "day-25.py"]
+input = "inputs/day-25-input.txt"
+timeout = 60
+answers = ["36067808580527", "2-212-2---=00-1--102"]
+note = "day 25 has no part 2; the decimal total is printed before the SNAFU answer"

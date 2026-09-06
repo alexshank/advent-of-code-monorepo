@@ -14,6 +14,18 @@ For each day, there will be the following files:
 
 ---
 
+## Running the solutions
+
+Every day can be run, answer-checked, and profiled at once from this directory:
+
+```shell
+make test
+```
+
+See [`harness/README.md`](./harness/README.md) for how it works, which days only produce one answer, and what it needs installed.
+
+---
+
 ## Selected Learnings
 
 Thoughts, observations, and eurekas for each day.
