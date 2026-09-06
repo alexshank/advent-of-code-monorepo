@@ -111,6 +111,16 @@ The request came with a condition — "if that isn't prohibitively expensive" �
 
 The important part is that `repeats` is recorded per case in the results. A capped day still reports a mean and a standard deviation, and if you cannot see that it is the mean of one, you will eventually read a 3% difference on day 16 as an improvement. The cheap fix for a measurement you cannot afford to take properly is to make the record say so.
 
+## Publishing the numbers
+
+The showcase app at scratch.alexandershank.com/aoc already generated everything it knows about 2022 from this repository — the code, the git history, and `writeups.md` — through one script, `sync_from_monorepo.py`, with the generated output committed over there. Adding measurements meant extending that pipeline rather than inventing a second one: the script now also reads the newest **full-suite** record out of `harness/results/`, groups it by day, and writes it into `days.json` alongside everything else.
+
+Only full-suite records are eligible. A partial run would put one day's timing from one commit next to another day's from a different one, and nothing in the rendered page would show that. It is the same instinct as recording `repeats`: the harness knows something about the quality of its own numbers, and every layer downstream has to carry that knowledge rather than flatten it.
+
+On the page the measurements became three things: a runtime chart, a peak memory chart, and a runtime-versus-difficulty scatter, plus the figures in each day's factbox and two new sort orders in the explorer. Both charts are log scale, because the year spans four orders of magnitude — on a linear axis every day except two would be an invisible sliver. Days solved twice, like day 1 in both Python and Haskell, show a row per language rather than an average, because averaging 0.01s of Python with 0.12s of `runghc` startup would describe neither.
+
+The interesting wrinkle was provenance. `writeups.md` lived on one branch and the harness on another, so no single checkout could produce a complete `days.json`. Generating it from a throwaway local merge would have worked and been quietly wrong: the `sourceCommit` field would point at a SHA that exists on no remote, and a file claiming to be generated from a commit nobody can fetch is worse than one with a field missing. The fix was a real branch, `feat/2022-showcase-source`, carrying the merge and pushed like any other.
+
 ## Prompting approaches used
 
 - **State the outcome, not the implementation.** "Run all days and assert their two answers, and profile time and memory" left the agent free to discover that a manifest plus a subprocess runner beat a pytest harness for a multi-language year.
@@ -118,4 +128,5 @@ The important part is that `repeats` is recorded per case in the results. A capp
 - **Let reconnaissance precede design.** The most useful thing the agent did was run all 25 days before writing any harness code. Every real design decision came out of that output.
 - **Make the agent surface decisions instead of guessing.** The three questions each had a materially different amount of churn behind them, from zero to a rewrite of every solution file.
 - **Prefer the least invasive option when in doubt.** The harness is entirely additive: it does not modify a single 2022 solution.
+- **Name the destination, not the mechanism.** "Find a way to incorporate these results on the aoc scratch app" left room to discover that the app already had a content pipeline worth extending, instead of a second one being bolted on beside it.
 - **Attach the cost condition to the request.** "Average 10 runs, if that isn't prohibitively expensive" is a better instruction than either "average 10 runs" or "make it accurate but fast", because it names the tradeoff and delegates where to draw the line. The answer was a per-case cap rather than a global compromise.
