@@ -25,7 +25,7 @@ Python solutions with puzzle prompts archived in the `prompts/` folder. Each com
 
 ### [AoC-2022](./AoC-2022/README.md)
 
-Mostly Python, with some Haskell and Kotlin experiments. Full 25-day run. Includes implementation notes (`implementation-notes.pdf`) and profiler results for the trickier days.
+Mostly Python, with some Haskell and Kotlin experiments. Full 25-day run. Includes implementation notes (`implementation-notes.pdf`) and profiler results for the trickier days, plus per-day commentary in [`writeups.md`](./AoC-2022/writeups.md).
 
 ### [AoC-2023](./AoC-2023/README.md)
 
@@ -38,6 +38,14 @@ Python solutions. Run any day's solution from the repo root with:
 ```shell
 python3 ./AoC-2025/day-01/solution.py
 ```
+
+## Reuse
+
+The 2022 solutions are the source for a showcase app at [scratch.alexandershank.com/aoc](https://scratch.alexandershank.com/aoc), built from the [`scratch-app`](https://github.com/alexshank/scratch-app) repo.
+
+**That dependency runs one way only.** This repository does not depend on `scratch-app`, does not build against it, and needs nothing from it. A script over there reads a clone of this repo — the `AoC-2022/` solution files, their git history, and `AoC-2022/writeups.md` — and generates its own content from them. Nothing here has to be run, installed, or kept in step for that to work.
+
+The one thing worth knowing before reformatting `AoC-2022/writeups.md`: that script parses the `## Day N — Title` headings and the `**Difficulty:**` / `**Tags:**` / `**Quote:**` lines. Changing them will break the parse over there, which is a `scratch-app` problem to fix rather than a constraint on this repo.
 
 ## History
 
