@@ -1,0 +1,12 @@
+{
+  "title": "Grove Positioning System",
+  "difficulty": null,
+  "tags": [
+    "circular lists"
+  ],
+  "quote": {
+    "text": "I still do not intuitively understand \"moving the number forward/backward.\" P.S. See git history for many confused attempts!",
+    "source": "day-20.py"
+  },
+  "description": ""
+}

@@ -1,0 +1,15 @@
+{
+  "title": "Monkey Map",
+  "difficulty": null,
+  "tags": [
+    "complex-number grids",
+    "cube folding",
+    "simulation",
+    "memoization"
+  ],
+  "quote": {
+    "text": "Digressing, will come back with visualization.",
+    "source": "commit"
+  },
+  "description": ""
+}

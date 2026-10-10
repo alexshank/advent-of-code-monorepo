@@ -1,0 +1,14 @@
+{
+  "title": "Monkey Math",
+  "difficulty": null,
+  "tags": [
+    "tree structures",
+    "symbolic solve",
+    "recursion"
+  ],
+  "quote": {
+    "text": "we build an expression like below and solve it with a library",
+    "source": "day-21.py"
+  },
+  "description": ""
+}

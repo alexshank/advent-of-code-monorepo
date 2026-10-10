@@ -1,0 +1,12 @@
+{
+  "title": "Calorie Counting",
+  "difficulty": null,
+  "tags": [
+    "parsing"
+  ],
+  "quote": {
+    "text": "My first Haskell program :)",
+    "source": "commit"
+  },
+  "description": ""
+}

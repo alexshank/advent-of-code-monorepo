@@ -1,0 +1,15 @@
+{
+  "title": "Proboscidea Volcanium",
+  "difficulty": null,
+  "tags": [
+    "Dijkstra",
+    "graph contraction",
+    "DFS",
+    "memoization"
+  ],
+  "quote": {
+    "text": "No!! Greedy doesn't work. What about top N candidates?",
+    "source": "handwritten notes"
+  },
+  "description": ""
+}

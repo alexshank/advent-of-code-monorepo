@@ -1,0 +1,13 @@
+{
+  "title": "Supply Stacks",
+  "difficulty": null,
+  "tags": [
+    "stacks",
+    "simulation"
+  ],
+  "quote": {
+    "text": "we'll add the crates to the stacks in FILO order",
+    "source": "day-5.py"
+  },
+  "description": ""
+}

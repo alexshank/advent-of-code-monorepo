@@ -1,0 +1,14 @@
+{
+  "title": "No Space Left On Device",
+  "difficulty": null,
+  "tags": [
+    "tree structures",
+    "recursion",
+    "DFS"
+  ],
+  "quote": {
+    "text": "higher-order function <==> function that takes functions as input",
+    "source": "day-7.py"
+  },
+  "description": ""
+}

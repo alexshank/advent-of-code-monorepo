@@ -1,0 +1,13 @@
+{
+  "title": "Rope Bridge",
+  "difficulty": null,
+  "tags": [
+    "simulation",
+    "grids"
+  ],
+  "quote": {
+    "text": "always put the tail on the same col or row as head if it moves (handles diagonals)",
+    "source": "day-9.py"
+  },
+  "description": ""
+}

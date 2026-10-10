@@ -1,0 +1,13 @@
+{
+  "title": "Beacon Exclusion Zone",
+  "difficulty": null,
+  "tags": [
+    "interval merging",
+    "geometry"
+  ],
+  "quote": {
+    "text": "If a row intersects a circle (defined by the sensor and beacon pair), then there will be two x coordinates defined by the intersection.",
+    "source": "day-15.py"
+  },
+  "description": ""
+}

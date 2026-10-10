@@ -1,0 +1,15 @@
+{
+  "title": "Blizzard Basin",
+  "difficulty": null,
+  "tags": [
+    "BFS",
+    "cycle detection",
+    "complex-number grids",
+    "memoization"
+  ],
+  "quote": {
+    "text": "Massive speedup by caching blizzard movements :D",
+    "source": "commit"
+  },
+  "description": ""
+}

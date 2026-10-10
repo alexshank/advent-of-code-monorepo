@@ -1,0 +1,14 @@
+{
+  "title": "Hill Climbing Algorithm",
+  "difficulty": null,
+  "tags": [
+    "BFS",
+    "grids",
+    "shortest path"
+  ],
+  "quote": {
+    "text": "clever solution: You can just run BFS from the destination and have it terminate when it reaches ANY square that could have been a start square",
+    "source": "day-12.kt"
+  },
+  "description": ""
+}

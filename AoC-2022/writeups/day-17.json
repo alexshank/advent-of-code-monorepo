@@ -1,0 +1,14 @@
+{
+  "title": "Pyroclastic Flow",
+  "difficulty": null,
+  "tags": [
+    "simulation",
+    "cycle detection",
+    "complex-number grids"
+  ],
+  "quote": {
+    "text": "LCM doesn't work obstensibly. Leaving notes for later.",
+    "source": "commit"
+  },
+  "description": ""
+}
