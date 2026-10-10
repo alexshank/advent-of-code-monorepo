@@ -1,0 +1,27 @@
+{
+  "title": "Proboscidea Volcanium",
+  "difficulty": 9,
+  "tags": [
+    "Dijkstra",
+    "graph contraction",
+    "DFS",
+    "memoization"
+  ],
+  "quote": {
+    "text": "No!! Greedy doesn't work. What about top N candidates?",
+    "source": "handwritten notes"
+  },
+  "description": "",
+  "notes": [
+    {
+      "file": "implementation-notes.pdf",
+      "page": 1,
+      "caption": "Contracting the valve graph down to only the valves worth opening. Ends with the greedy approach being ruled out."
+    },
+    {
+      "file": "implementation-notes.pdf",
+      "page": 2,
+      "caption": "Next-hop and distance tables worked by hand to check the shortest-path implementation."
+    }
+  ]
+}

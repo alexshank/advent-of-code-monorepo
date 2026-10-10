@@ -1,0 +1,22 @@
+{
+  "title": "Monkey Map",
+  "difficulty": 9,
+  "tags": [
+    "complex-number grids",
+    "cube folding",
+    "simulation",
+    "memoization"
+  ],
+  "quote": {
+    "text": "Digressing, will come back with visualization.",
+    "source": "commit"
+  },
+  "description": "",
+  "notes": [
+    {
+      "file": "implementation-notes.pdf",
+      "page": 3,
+      "caption": "Every cube face, every rotation, every edge crossing, worked out on paper before any code was written."
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "title": "Regolith Reservoir",
+  "difficulty": 5,
+  "tags": [
+    "simulation",
+    "complex-number grids",
+    "sets"
+  ],
+  "quote": {
+    "text": "Completed day 14.",
+    "source": "commit"
+  },
+  "description": ""
+}

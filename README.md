@@ -25,7 +25,19 @@ Python solutions with puzzle prompts archived in the `prompts/` folder. Each com
 
 ### [AoC-2022](./AoC-2022/README.md)
 
-Mostly Python, with some Haskell and Kotlin experiments. Full 25-day run. Includes implementation notes (`implementation-notes.pdf`) and profiler results for the trickier days.
+> **TODO:** The difficulty and description of each day are currently filled with placeholder values. These should be manually reviewed and updated with real thoughts on each day.
+
+Mostly Python, with some Haskell and Kotlin experiments. Full 25-day run. Includes implementation notes (`implementation-notes.pdf`) and profiler results for the trickier days, plus per-day commentary in [`writeups/`](./AoC-2022/writeups/).
+
+#### Test Harness
+
+A test harness was developed to run and assert correct answers for all 25 days. Additionally, this test harness profiles each day based on memory usage and execution time. Outputs are written to JSON files that can be consumed by downstream systems (mainly the showcase app).
+
+#### Showcase App
+
+The 2022 solutions are the source for a showcase app at [scratch.alexandershank.com/aoc](https://scratch.alexandershank.com/aoc), built from the [`scratch-app`](https://github.com/alexshank/scratch-app) repo.
+
+This repository does not depend on `scratch-app`, does not build against it, and needs nothing from it. The source code and test harness outputs of this repo are used as input to the showcase app.
 
 ### [AoC-2023](./AoC-2023/README.md)
 

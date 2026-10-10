@@ -1,0 +1,14 @@
+{
+  "title": "Boiling Boulders",
+  "difficulty": 4,
+  "tags": [
+    "BFS",
+    "3D grids",
+    "flood fill"
+  ],
+  "quote": {
+    "text": "bfs \"expands\" the outside air around the lava blob",
+    "source": "day-18.py"
+  },
+  "description": ""
+}

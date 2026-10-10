@@ -1,0 +1,13 @@
+{
+  "title": "Camp Cleanup",
+  "difficulty": 1,
+  "tags": [
+    "interval overlap",
+    "parsing"
+  ],
+  "quote": {
+    "text": "take each line \"19-24,45-67\" -> [19, 24, 45, 67]",
+    "source": "day-4.py"
+  },
+  "description": ""
+}

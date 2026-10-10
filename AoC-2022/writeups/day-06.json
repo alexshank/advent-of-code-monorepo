@@ -1,0 +1,14 @@
+{
+  "title": "Tuning Trouble",
+  "difficulty": 1,
+  "finished": "2022-12",
+  "tags": [
+    "sliding window",
+    "sets"
+  ],
+  "quote": {
+    "text": "recursion is no bueno for this (problem gets bigger)",
+    "source": "day-6.hs"
+  },
+  "description": ""
+}

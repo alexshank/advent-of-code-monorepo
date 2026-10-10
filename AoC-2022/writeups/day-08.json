@@ -1,0 +1,13 @@
+{
+  "title": "Treetop Tree House",
+  "difficulty": 3,
+  "tags": [
+    "grids",
+    "higher-order functions"
+  ],
+  "quote": {
+    "text": "NOTE: Was trying to abuse higher-order functions. Obscure code below.",
+    "source": "day-8.py"
+  },
+  "description": ""
+}

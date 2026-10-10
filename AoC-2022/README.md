@@ -8,22 +8,37 @@ Advent of Code solutions for 2022 (mostly in Python). Fingers crossed we can lea
 
 For each day, there will be the following files:
 
-- `day-x-prompt.txt`
-- `day-x-input.txt`
+> **Note:** There may be additional test input files or `.hs` / `.kt` solution files.
+
+- `prompts/day-x-prompt.txt`
+- `inputs/day-x-input.txt`
+- `writeups/day-x.json`
 - `day-x.py`
 
 ---
 
-## Selected Learnings
+## Writeups
 
-Thoughts, observations, and eurekas for each day.
+Each `writeups/day-x.json` holds my analysis of that day. The scratch-app AoC showcase reads these files directly, so anything said about a solution belongs here.
 
-#### Day 19
-- Created an entire custom class which overloaded `+`, `*`, `<=`, etc. Could have just used a 4-Tuple, which already works intuitively.
-- Main issue is reducing the problem space to a reasonable size. Heuristics are necessary, at least from what I can tell (no obvious, optimal solution that is fast).
-- Needed to add profiling with this command: `python3 -m cProfile -s time day-19.py > day-19-profiler-results.txt`
-    - Turns out tuples have been very inefficient.
-    - Ultimately, pruning the search space was the only thing that made tangible improvements on execution time.
-- Interestingly, the example input takes an indefinite amount of time to run for part 2. Ran it for ~10 mins before killing.
-    - My solution worked for the actual challenge input though.
-- I needed A LOT of hints and references from the Advent of Code Reddit threads. I would not have solved this without them.
+| Field         | Type                | Meaning                                                                                                                                  |
+| ------------- | ------------------- | ---------------------------------------------------------------------------------------------------------------------------------------- |
+| `title`       | string              | Official puzzle title                                                                                                                    |
+| `difficulty`  | integer 1 to 10     | How hard the day was for me                                                                                                              |
+| `finished`    | `YYYY-MM`, optional | Month the day was really finished. Only needed when later commits touch the file incidentally. Defaults to the month of the last commit. |
+| `tags`        | list of strings     | Techniques used                                                                                                                          |
+| `quote`       | `{text, source}`    | A line from the code comments, README, or notes                                                                                          |
+| `description` | markdown string     | Longer thoughts on the day                                                                                                               |
+| `notes`       | list, optional      | Handwritten pages for the day, as `{file, page, caption}` pointing into a file in this directory such as `implementation-notes.pdf`      |
+
+---
+
+## Running the solutions
+
+Every day can be run, answer-checked, and profiled at once from this directory:
+
+```shell
+make test
+```
+
+See [`harness/README.md`](./harness/README.md) for how it works, which days only produce one answer, and what it needs installed.

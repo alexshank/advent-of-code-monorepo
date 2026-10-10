@@ -1,0 +1,14 @@
+{
+  "title": "Monkey in the Middle",
+  "difficulty": 6,
+  "tags": [
+    "simulation",
+    "modular arithmetic",
+    "LCM"
+  ],
+  "quote": {
+    "text": "least common multiple (LCM) of prime numbers (like we have) is just their product!",
+    "source": "day-11.py"
+  },
+  "description": ""
+}
