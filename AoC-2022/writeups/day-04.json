@@ -1,6 +1,6 @@
 {
   "title": "Camp Cleanup",
-  "difficulty": null,
+  "difficulty": 1,
   "tags": [
     "interval overlap",
     "parsing"

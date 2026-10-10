@@ -1,6 +1,6 @@
 {
   "title": "Regolith Reservoir",
-  "difficulty": null,
+  "difficulty": 5,
   "tags": [
     "simulation",
     "complex-number grids",

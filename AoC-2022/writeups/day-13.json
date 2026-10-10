@@ -1,6 +1,6 @@
 {
   "title": "Distress Signal",
-  "difficulty": null,
+  "difficulty": 5,
   "tags": [
     "recursion",
     "parsing",

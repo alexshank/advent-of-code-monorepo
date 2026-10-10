@@ -1,6 +1,6 @@
 {
   "title": "Beacon Exclusion Zone",
-  "difficulty": null,
+  "difficulty": 6,
   "tags": [
     "interval merging",
     "geometry"

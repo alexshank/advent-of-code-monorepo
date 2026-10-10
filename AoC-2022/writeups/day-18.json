@@ -1,6 +1,6 @@
 {
   "title": "Boiling Boulders",
-  "difficulty": null,
+  "difficulty": 4,
   "tags": [
     "BFS",
     "3D grids",

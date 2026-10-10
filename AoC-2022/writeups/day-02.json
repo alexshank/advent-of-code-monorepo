@@ -1,6 +1,6 @@
 {
   "title": "Rock Paper Scissors",
-  "difficulty": null,
+  "difficulty": 2,
   "tags": [
     "parsing",
     "modular arithmetic"

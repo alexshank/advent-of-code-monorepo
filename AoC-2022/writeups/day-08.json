@@ -1,6 +1,6 @@
 {
   "title": "Treetop Tree House",
-  "difficulty": null,
+  "difficulty": 3,
   "tags": [
     "grids",
     "higher-order functions"

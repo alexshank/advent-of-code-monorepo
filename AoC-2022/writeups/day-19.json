@@ -1,6 +1,6 @@
 {
   "title": "Not Enough Minerals",
-  "difficulty": null,
+  "difficulty": 10,
   "tags": [
     "DFS",
     "heaps",

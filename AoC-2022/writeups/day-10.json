@@ -1,6 +1,6 @@
 {
   "title": "Cathode-Ray Tube",
-  "difficulty": null,
+  "difficulty": 3,
   "tags": [
     "simulation",
     "CRT rendering"

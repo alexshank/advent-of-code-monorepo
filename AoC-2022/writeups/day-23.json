@@ -1,6 +1,7 @@
 {
   "title": "Unstable Diffusion",
-  "difficulty": null,
+  "difficulty": 5,
+  "finished": "2022-12",
   "tags": [
     "simulation",
     "complex-number grids",

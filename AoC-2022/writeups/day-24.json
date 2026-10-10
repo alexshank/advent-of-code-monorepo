@@ -1,6 +1,6 @@
 {
   "title": "Blizzard Basin",
-  "difficulty": null,
+  "difficulty": 6,
   "tags": [
     "BFS",
     "cycle detection",

@@ -1,6 +1,7 @@
 {
   "title": "Tuning Trouble",
-  "difficulty": null,
+  "difficulty": 1,
+  "finished": "2022-12",
   "tags": [
     "sliding window",
     "sets"

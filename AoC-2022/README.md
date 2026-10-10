@@ -17,6 +17,22 @@ For each day, there will be the following files:
 
 ---
 
+## Writeups
+
+Each `writeups/day-x.json` holds my analysis of that day. The scratch-app AoC showcase reads these files directly, so anything said about a solution belongs here.
+
+| Field         | Type                | Meaning                                                                                                                                  |
+| ------------- | ------------------- | ---------------------------------------------------------------------------------------------------------------------------------------- |
+| `title`       | string              | Official puzzle title                                                                                                                    |
+| `difficulty`  | integer 1 to 10     | How hard the day was for me                                                                                                              |
+| `finished`    | `YYYY-MM`, optional | Month the day was really finished. Only needed when later commits touch the file incidentally. Defaults to the month of the last commit. |
+| `tags`        | list of strings     | Techniques used                                                                                                                          |
+| `quote`       | `{text, source}`    | A line from the code comments, README, or notes                                                                                          |
+| `description` | markdown string     | Longer thoughts on the day                                                                                                               |
+| `notes`       | list, optional      | Handwritten pages for the day, as `{file, page, caption}` pointing into a file in this directory such as `implementation-notes.pdf`      |
+
+---
+
 ## Running the solutions
 
 Every day can be run, answer-checked, and profiled at once from this directory:

@@ -1,6 +1,6 @@
 {
   "title": "Rope Bridge",
-  "difficulty": null,
+  "difficulty": 5,
   "tags": [
     "simulation",
     "grids"

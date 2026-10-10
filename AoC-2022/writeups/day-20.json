@@ -1,6 +1,6 @@
 {
   "title": "Grove Positioning System",
-  "difficulty": null,
+  "difficulty": 7,
   "tags": [
     "circular lists"
   ],
@@ -8,5 +8,12 @@
     "text": "I still do not intuitively understand \"moving the number forward/backward.\" P.S. See git history for many confused attempts!",
     "source": "day-20.py"
   },
-  "description": ""
+  "description": "",
+  "notes": [
+    {
+      "file": "implementation-notes.pdf",
+      "page": 4,
+      "caption": "Mixing traced by hand, twice, trying to make the wrap-around behaviour make sense. Captioned “Circular linked list so confusing”."
+    }
+  ]
 }

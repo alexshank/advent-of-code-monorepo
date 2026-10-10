@@ -1,6 +1,6 @@
 {
   "title": "Full of Hot Air",
-  "difficulty": null,
+  "difficulty": 4,
   "tags": [
     "base conversion",
     "greedy"

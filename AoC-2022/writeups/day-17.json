@@ -1,6 +1,6 @@
 {
   "title": "Pyroclastic Flow",
-  "difficulty": null,
+  "difficulty": 8,
   "tags": [
     "simulation",
     "cycle detection",
