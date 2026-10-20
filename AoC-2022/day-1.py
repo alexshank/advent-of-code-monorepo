@@ -11,3 +11,7 @@ if __name__ == "__main__":
 	# print sum of top 3
 	sums.sort()
 	print(sum(sums[-3:]))
+
+	# part 1 solution: 70374
+	# part 2 solution: 204610
+	

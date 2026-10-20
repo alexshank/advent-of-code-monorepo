@@ -1,13 +1,10 @@
 {
   "title": "Full of Hot Air",
   "difficulty": 4,
-  "tags": [
-    "base conversion",
-    "greedy"
-  ],
+  "tags": ["base conversion", "greedy"],
   "quote": {
     "text": "Still trying to find pattern...",
-    "source": "commit"
+    "source": "Git commit."
   },
   "description": ""
 }

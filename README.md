@@ -27,7 +27,7 @@ Python solutions with puzzle prompts archived in the `prompts/` folder. Each com
 
 > **TODO:** The difficulty and description of each day are currently filled with placeholder values. These should be manually reviewed and updated with real thoughts on each day.
 >
-> Additionally, the tags for each day should also be reviewed and homogenized. Commit history that is read during website builds should be reviewed for any sensitive info.
+> Additionally, the tags for each day should also be reviewed and homogenized.
 
 Mostly Python, with some Haskell and Kotlin experiments. Full 25-day run. Includes implementation notes (`implementation-notes.pdf`) and profiler results for the trickier days, plus per-day commentary in [`writeups/`](./AoC-2022/writeups/).
 

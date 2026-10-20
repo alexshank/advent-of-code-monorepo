@@ -1,13 +1,10 @@
 {
   "title": "Rock Paper Scissors",
   "difficulty": 2,
-  "tags": [
-    "parsing",
-    "modular arithmetic"
-  ],
+  "tags": ["parsing", "modular arithmetic"],
   "quote": {
     "text": "Changed match to modulo operator.",
-    "source": "commit"
+    "source": "Git commit."
   },
   "description": ""
 }

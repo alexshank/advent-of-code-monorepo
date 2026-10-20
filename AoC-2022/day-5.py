@@ -55,4 +55,6 @@ if __name__ == "__main__":
 	# part 2
 	print(move_crates(stacks_copy, triples, is_crate_mover_9001 = True))
 
+    # part 1 solution: TGWSMRBPN
+    # part 2 solution: TZLTLWRNF
 

@@ -12,3 +12,6 @@ if __name__ == "__main__":
 	print(solve(data, 4))
 	print(solve(data, 14))
 
+    # part 1 solution: 1262
+    # part 2 solution: 3444
+

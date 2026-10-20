@@ -42,4 +42,6 @@ if __name__ == "__main__":
 	print(total) 						# part 1
 	print(max_scenic_score) # part 2
 
+    # part 1 solution: 1782
+    # part 2 solution: 474606
 

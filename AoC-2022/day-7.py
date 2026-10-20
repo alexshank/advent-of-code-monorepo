@@ -84,3 +84,7 @@ if __name__ == "__main__":
 	ans = get_deletion_candidates(root_node, need_to_free)
 	ans.sort(key = lambda x: x[1])
 	print(ans[0][1])
+
+    # part 1 solution: 1490523
+    # part 2 solution: 12390492
+

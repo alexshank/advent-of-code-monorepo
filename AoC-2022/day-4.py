@@ -20,4 +20,6 @@ if __name__ == "__main__":
 			total += 1
 	print(len(data) - total)
 
+    # part 1 solution: 509
+    # part 2 solution: 870
 

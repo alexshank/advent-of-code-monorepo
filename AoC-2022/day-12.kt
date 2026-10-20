@@ -79,3 +79,7 @@ private fun characterToElevation(c: Char): Int =
         'E' -> 'z'.code
         else -> c.code
     }
+
+// part 1 solution: 456
+// part 2 solution: 454
+

@@ -25,3 +25,7 @@ if __name__ == "__main__":
 			case 'Y': total += 3 + opponent + 1
 			case 'Z': total += 6 + (opponent + 1) % 3 + 1
 	print(total)
+    
+    # part 1 solution: 9177
+    # part 2 solution: 12111
+

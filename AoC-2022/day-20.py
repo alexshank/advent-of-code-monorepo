@@ -39,7 +39,7 @@ if __name__ == "__main__":
 		result += numbers[original_index]
 	print(f'Part 1: {result}')
 
-	# part 2 (answer: )
+	# part 2 (answer: 9738258246847)
 	numbers = [number * 811589153 for number in numbers]
 	indices = list(range(len(data))) # reset
 	for i in indices * 10:

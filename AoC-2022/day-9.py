@@ -92,3 +92,7 @@ if __name__ == "__main__":
 
 	# part 2
 	print(len(tail_positions))
+
+    # part 1 solution: 6087
+    # part 2 solution: 2493
+
