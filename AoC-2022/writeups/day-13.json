@@ -1,14 +1,10 @@
 {
   "title": "Distress Signal",
   "difficulty": 5,
-  "tags": [
-    "recursion",
-    "parsing",
-    "custom sort"
-  ],
+  "tags": ["recursion", "parsing", "custom sort"],
   "quote": {
     "text": "Completed day 13.",
-    "source": "commit"
+    "source": "Git commit."
   },
   "description": ""
 }

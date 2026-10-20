@@ -34,4 +34,6 @@ if __name__ == "__main__":
 		if current_cycle % 40 == 0:
 			print()
 
+    # part 1 solution: 12520
+    # part 2 solution: EHPZPJGL
 

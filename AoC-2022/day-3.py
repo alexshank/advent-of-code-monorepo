@@ -22,3 +22,6 @@ if __name__ == "__main__":
 		total += priority(val)
 	print(total)
 
+    # part 1 solution: 8053
+    # part 2 solution: 2425
+

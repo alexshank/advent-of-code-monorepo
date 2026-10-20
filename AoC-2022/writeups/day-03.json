@@ -1,13 +1,10 @@
 {
   "title": "Rucksack Reorganization",
   "difficulty": 2,
-  "tags": [
-    "sets",
-    "parsing"
-  ],
+  "tags": ["sets", "parsing"],
   "quote": {
     "text": "Completed day 3 puzzle.",
-    "source": "commit"
+    "source": "Git commit."
   },
   "description": ""
 }

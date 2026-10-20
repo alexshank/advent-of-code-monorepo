@@ -1,12 +1,10 @@
 {
   "title": "Calorie Counting",
   "difficulty": 1,
-  "tags": [
-    "parsing"
-  ],
+  "tags": ["parsing"],
   "quote": {
     "text": "My first Haskell program :)",
-    "source": "commit"
+    "source": "Git commit."
   },
   "description": ""
 }

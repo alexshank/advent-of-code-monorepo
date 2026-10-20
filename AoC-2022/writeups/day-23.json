@@ -2,14 +2,10 @@
   "title": "Unstable Diffusion",
   "difficulty": 5,
   "finished": "2022-12",
-  "tags": [
-    "simulation",
-    "complex-number grids",
-    "sets"
-  ],
+  "tags": ["simulation", "complex-number grids", "sets"],
   "quote": {
     "text": "Completed day 23.",
-    "source": "commit"
+    "source": "Git commit."
   },
   "description": ""
 }
