@@ -134,7 +134,6 @@ id = "day-15-py"
 cmd = ["python3", "day-15.py"]
 input = "inputs/day-15-input.txt"
 timeout = 120
-repeats = 3
 answers = ["5112034", "13172087230812"]
 
 [[case]]
@@ -142,7 +141,6 @@ id = "day-16-py"
 cmd = ["python3", "day-16.py"]
 input = "inputs/day-16-input.txt"
 timeout = 600
-repeats = 1
 answers = ["Answer 1: 1915", "Answer 2: 2772"]
 
 [[case]]
@@ -165,7 +163,6 @@ id = "day-19-py"
 cmd = ["python3", "day-19.py"]
 input = "inputs/day-19-input.txt"
 timeout = 600
-repeats = 1
 answers = ["21546"]
 note = "part 2 only; part 1 (1127) was overwritten"
 
