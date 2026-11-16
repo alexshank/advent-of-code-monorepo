@@ -1,6 +1,7 @@
 {
   "title": "Rope Bridge",
   "difficulty": 5,
+  "finished": "2022-12",
   "tags": [
     "simulation",
     "grids"

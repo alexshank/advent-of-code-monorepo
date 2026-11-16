@@ -1,6 +1,7 @@
 {
   "title": "Cathode-Ray Tube",
   "difficulty": 3,
+  "finished": "2022-12",
   "tags": ["simulation", "CRT rendering"],
   "quote": {
     "text": "Saving progress.",

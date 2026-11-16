@@ -1,6 +1,7 @@
 {
   "title": "No Space Left On Device",
   "difficulty": 4,
+  "finished": "2022-12",
   "tags": [
     "tree structures",
     "recursion",
