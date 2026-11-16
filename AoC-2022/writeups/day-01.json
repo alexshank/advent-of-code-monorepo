@@ -1,6 +1,7 @@
 {
   "title": "Calorie Counting",
   "difficulty": 1,
+  "finished": "2022-12",
   "tags": ["parsing"],
   "quote": {
     "text": "My first Haskell program :)",

@@ -1,6 +1,7 @@
 {
   "title": "Camp Cleanup",
   "difficulty": 1,
+  "finished": "2022-12",
   "tags": [
     "interval overlap",
     "parsing"
